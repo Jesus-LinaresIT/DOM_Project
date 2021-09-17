@@ -14,11 +14,11 @@ function loadEventListeners() {
    // Add task event
    form.addEventListener('submit', addTask);
 
-   // Remove task list
+   // Remove a task list
    taskList.addEventListener('click', removeTask);
 
-   // Remove
-   //clearBtn.addEventListener('click', clearTask);
+   // Remove all task
+   clearBtn.addEventListener('click', clearTask);
 
    // Filter
    //filter.addEventListener('keyup', filterTask);
@@ -62,12 +62,24 @@ function addTask(e){
    e.preventDefault();
 }
 
+
 // Remove Task
 function removeTask(e){
    if (e.target.parentElement.classList.contains
       ('delete-item')){
       if (confirm('Are you sure you want to remove task?')){
          e.target.parentElement.parentElement.remove();
+      }
+   }
+}
+
+
+// Clear task
+function clearTask(e){
+   // Remove all task lists
+   while(taskList.firstChild){
+      if (confirm('Are you sure you want to remove all task lists?')){
+         taskList.removeChild(taskList.firstChild)
       }
    }
 }
