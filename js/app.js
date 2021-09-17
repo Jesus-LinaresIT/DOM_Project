@@ -63,24 +63,23 @@ function addTask(e){
 }
 
 
+
 // Remove Task
 function removeTask(e){
-   if (e.target.parentElement.classList.contains
+   if(e.target.parentElement.classList.contains
       ('delete-item')){
-      if (confirm('Are you sure you want to remove task?')){
-         e.target.parentElement.parentElement.remove();
+         if(confirm('Are you sure you want to remove task?')){
+            e.target.parentElement.parentElement.remove();
+         }
       }
-   }
 }
 
 
-// Clear task
+// Clear Tasks
 function clearTask(e){
-   // Remove all task lists
+   // Remove all tasks from collection
    while(taskList.firstChild){
-      if (confirm('Are you sure you want to remove all task lists?')){
-         taskList.removeChild(taskList.firstChild)
-      }
+      taskList.removeChild(taskList.firstChild);
    }
 }
 
