@@ -73,4 +73,3 @@ function removeTask(e){
 }
 
 
-// Filter Tasks
