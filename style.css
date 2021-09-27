@@ -1,0 +1,12 @@
+.collection .collection-item{
+   padding: 10px 15px;
+}
+
+.collection-item .secondary-content{
+   margin-right: 0px !important;
+}
+
+
+.main-block .content-card{
+   padding: 16px 20px;
+}

@@ -1,9 +1,11 @@
 // Define UI vars
-const form = document.querySelector('#task-form');
-const taskInput = document.querySelector('#task');
-const filter = document.querySelector('#filter');
-const taskList = document.querySelector('.collection');
-const clearBtn = document.querySelector('.clear-tasks');
+const form = document.querySelector('#task-form'),
+      taskInput = document.querySelector('#task'),
+      filter = document.querySelector('#filter'),
+      taskList = document.querySelector('.collection'),
+      clearBtn = document.querySelector('.clear-tasks');
+
+
 
 
 // Load all event listeners
@@ -33,7 +35,7 @@ function getTasks(){
       tasks = JSON.parse(localStorage.getItem('tasks'));
    }
 
-   tasks.forEach(function(task){
+   tasks.forEach(task => {
       const li = document.createElement('li');
       li.className = 'collection-item';
       li.appendChild(document.createTextNode(task));
@@ -143,7 +145,7 @@ function filterTasks(e){
    const text = e.target.value.toLowerCase();
 
    document.querySelectorAll('.collection-item').forEach(
-      function(task) {
+      task => {
       const item = task.firstChild.textContent;
 
       if (item.toLowerCase().indexOf(text) !== -1) {
